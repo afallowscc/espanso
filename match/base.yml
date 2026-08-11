@@ -1,0 +1,95 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
+
+# And much more! For more information, visit the docs: https://espanso.org/docs/
+
+matches:
+  #
+  # Espanso
+  #
+  - trigger: ;sn # basic snippet
+    replace: |-
+      - trigger:
+        replace:
+
+  #
+  # Obsidian
+  #
+
+  # Jira
+  - trigger: ;ji # Jira inline
+    replace: JIRA:TRN-
+
+  - trigger: ;jq # Jira query
+    replace: |-
+      ```
+      query: project = TRN and
+      columns: -TYPE, KEY, STATUS, SUMMARY
+      limit: 20
+      ```
+
+  - trigger: ;jb # Jira block
+    replace: |-
+      ```jira-issue
+      TRN-
+      ```
+  - trigger: ;jk # Jira kanban
+    replace: https://captivecorp.atlassian.net/jira/software/projects/TRN/boards/1
+
+  #
+  # Captive / Webdev
+  #
+
+  # Github
+  - trigger: ;gtr # main repo
+    replace: https://github.com/Captive-Capital-Corporation/Trinity8
+
+  - trigger: ;gtp # reference main repo PR
+    replace: Captive-Capital-Corporation/trinity#
+
+  - trigger: ;gdb # db repo
+    replace: https://github.com/Captive-Capital-Corporation/database
+
+  - trigger: ;gdp # reference db repo PR
+    replace: Captive-Capital-Corporation/trinityDatabaseMain#
+
+  # Email
+  - trigger: ;rst # Reminder: staging
+    replace: >
+      Reminder: to test in staging, log in at https://staging.captivecorp.com/Internal/Login using your
+      Captive email address and the password `staging`
+
+  # Browser
+  - trigger: ;la # localhost application
+    replace: http://localhost:5252/Customer/Application
+
+  - trigger: ;li # localhost internal login
+    replace: http://localhost:5252/Internal/Login
+
+  #
+  # Personal
+  #
+
+  # FFXIV
+  - trigger: ;mcdf # Link to MCDF folder
+    replace: https://drive.google.com/drive/folders/1Swwj1PRsUjrcMaqZc8wxxTe0cOV3klOq?usp=sharing
+
+  # Email
+  - trigger: ;canspam
+    replace: >
+      This promotional email does not include clear and conspicuous instructions on how to unsubscribe.
+      That is in direct violation of CAN-SPAM and is therefore illegal.
+      In addition to unsubscribing me from this list, please uphold your legal obligation to provide
+      such instructions in all promotional email.
+      Please do not respond to this message except to acknowledge that I have been unsubscribed and
+      that you will begin complying with the law. Thank you.
+
