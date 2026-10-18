@@ -1,0 +1,54 @@
+matches:
+  #
+  # Captive / Webdev
+  #
+
+  # Github
+  - trigger: ;gtr # main repo
+    replace: https://github.com/Captive-Capital-Corporation/Trinity8
+
+  - trigger: ;gtp # reference main repo PR
+    replace: Captive-Capital-Corporation/trinity#
+
+  - trigger: ;gdb # db repo
+    replace: https://github.com/Captive-Capital-Corporation/database
+
+  - trigger: ;gdp # reference db repo PR
+    replace: Captive-Capital-Corporation/trinityDatabaseMain#
+
+  # Email
+  - trigger: ;rst # Reminder: staging
+    replace: >
+      Reminder: to test in staging, log in at https://staging.captivecorp.com/Internal/Login using your
+      Captive email address and the password `staging`
+
+  # Browser
+  - trigger: ;la # localhost application
+    replace: http://localhost:5252/Customer/Application
+
+  - trigger: ;li # localhost internal login
+    replace: http://localhost:5252/Internal/Login
+
+  #
+  # Obsidian
+  #
+
+  # Jira
+  - trigger: ;ji # Jira inline
+    replace: JIRA:TRN-
+
+  - trigger: ;jq # Jira query
+    replace: |-
+      ```
+      query: project = TRN and
+      columns: -TYPE, KEY, STATUS, SUMMARY
+      limit: 20
+      ```
+
+  - trigger: ;jb # Jira block
+    replace: |-
+      ```jira-issue
+      TRN-
+      ```
+  - trigger: ;jk # Jira kanban
+    replace: https://captivecorp.atlassian.net/jira/software/projects/TRN/boards/1
